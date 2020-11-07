@@ -1,10 +1,10 @@
-/********************************************************************************\
+/******************************************************************************\
  * Curso de Programación 1. Tema 9
  * Autores: Simona Bernardi y Miguel Ángel Latre
  * Última revisión: 6 de noviembre de 2019
  * Resumen: Soluciones a los problemas planteados en la clase de problemas
  *          del tema 9 sobre matrices.
-\********************************************************************************/
+\******************************************************************************/
 #include <iostream>
 #include <iomanip>
 
@@ -24,9 +24,9 @@ const int ANCHO = 4;
 
 /*
  * Pre:  La matriz «mat» tiene unas dimensiones máximas de DIM × DIM.
- * Post: Se ha solicitado al usuario y el número de filas «nf» y de columnas «nf»
- *       y se ha leído del teclado hasta que 0 < nf ≤ DIM y 0 < nc ≤ DIM. A
- *       continuación, se ha solicitado la introducción por el teclado de
+ * Post: Se ha solicitado al usuario y el número de filas «nf» y de columnas 
+ *       «nf» y se ha leído del teclado hasta que 0 < nf ≤ DIM y 0 < nc ≤ DIM.
+ *       A continuación, se ha solicitado la introducción por el teclado de
  *       nf x nc datos enteros y se han copiado en las primeras nf x nc
  *       componentes de «mat», de menor a mayor índice.
  */
@@ -99,8 +99,8 @@ bool esSimetrica(const int mat[][DIM], const int n){
 
 
 /*
- * Pre:  Las matrices «A», «B» y «C» son cuadradas de DIM × DIM y «nfa», «nca», «nfb» 
- *       y «ncb» están comprendidos entre 0 y DIM (inclusive).
+ * Pre:  Las matrices «A», «B» y «C» son cuadradas de DIM × DIM y «nfa», «nca», 
+ *       «nfb» y «ncb» están comprendidos entre 0 y DIM (inclusive).
  *	     Se cumplen las condiciones para la multiplicación de las dos matrices
  *       «A» y «B»: nca = nfb.
  * Post: La matriz «C» es la matriz producto de la multiplicación A × B.
