@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Curso de Programación 1. Tema 9
  * Autores: Simona Bernardi y Miguel Ángel Latre
- * Última revisión: 6 de noviembre de 2019
+ * Última revisión: 11 de noviembre de 2020
  * Resumen: Soluciones a los problemas planteados en la clase de problemas
  *          del tema 9 sobre matrices.
 \******************************************************************************/
@@ -63,7 +63,7 @@ void escribirMatriz(const int mat[][DIM], const int nf, const int nc) {
 
 /* 
  * Pre:  La matriz «mat» es una matriz de dimensiones máximas DIM × DIM
- *       y «nf» y «nc» están comprendidos entre 0 y DIM (inclusive).
+ *       y «nf» y «nc» están comprendidos entre 1 y DIM (inclusive).
  * Post: Ha escrito la transpuesta de la matriz «mat» en la pantalla.
  */
 void escribirTraspuesta(const int mat[][DIM], const int nf, const int nc){
@@ -100,13 +100,13 @@ bool esSimetrica(const int mat[][DIM], const int n){
 
 /*
  * Pre:  Las matrices «A», «B» y «C» son cuadradas de DIM × DIM y «nfa», «nca», 
- *       «nfb» y «ncb» están comprendidos entre 0 y DIM (inclusive).
+ *       «nfb» y «ncb» están comprendidos entre 1 y DIM (inclusive).
  *	     Se cumplen las condiciones para la multiplicación de las dos matrices
  *       «A» y «B»: nca = nfb.
  * Post: La matriz «C» es la matriz producto de la multiplicación A × B.
  */
 void multiplicar(const int A[][DIM], const int B[][DIM], const int nfa,
-                  const int nca, const int ncb, int C[][DIM]) {
+                 const int nca, const int ncb, int C[][DIM]) {
     for (int i = 0; i < nfa; i++) {
         for (int k = 0; k < ncb; k++) {
             int suma=0;
@@ -121,33 +121,36 @@ void multiplicar(const int A[][DIM], const int B[][DIM], const int nfa,
 
 /*
  * Programa que solicita al usuario que introduzca los datos de una matriz «M»
- * (tanto las dimensiones entre 0 y DIM - 1 como valores de toas sus componentes) 
+ * (tanto las dimensiones entre 1 y DIM como valores de todas sus componentes) 
  * y escribe en la pantalla la matriz traspuesta de «M». Si «M» es cuadrada y es
  * simétrica, escribe un mensaje en la pantalla indicándolo.
  * 
  * A continuación, solicita al usuario que introduzca los datos dos matrices «a» y
- * «b» (también tanto las dimensiones entre 0 y DIM - 1 como los valores de sus 
- * componentes). Comprueba si se puede hacer el producto de las dos matrices: en
+ * «b» (también tanto las dimensiones entre 1 y DIM como los valores de sus 
+ * componentes). Comprueba si se puede calcular el producto de las dos matrices: en
  * caso afirmativo, calcula la matriz producto y la escribe en la pantalla. En
- * caso contrario escribe un mensaje en la pantalla indicando que no se pueden
- * multiplicar.
+ * caso negativo avisa al usuario con un mensaje.
  */
+
 int main() {
+
+    // Paso 1: pedir al usuario una matriz M de dimensión n x m y escribir la matriz traspuesta
     cout << "TRASPUESTA DE UNA MATRIZ:" << endl;
     cout << endl;
-    
+
     int n, m, M[DIM][DIM];
     leerMatriz(M,n,m);
 
-    cout << endl;
     cout << "La matriz traspuesta es:" << endl;
     escribirTraspuesta(M,n,m);
+    
+    // Paso 2: verificar si la matriz es cuadrada y es simétrica y escribir el mensaje correspondiente
     
     if (n == m && esSimetrica(M, n)) {
         cout << "La matriz es simétrica" << endl;
     }
 
-
+    // Paso 3: pedir al usuario dos matrices A (dimensión: nfa x nca) y B (dimensión: nfb x ncb)
     cout << endl;
     cout << endl;
     cout << "MULTIPLICACIÓN DE DOS MATRICES:" << endl;
@@ -161,6 +164,10 @@ int main() {
     leerMatriz(B, nfb, ncb);
     cout << endl;
 
+    // Paso 4: controlar si se puede calcular el producto: 
+    // 		   en caso positivo, escribir la matriz producto
+    // 		   en caso negativo, avisar al usuario con un mensaje
+    
     if (nca == nfb){
         int C[DIM][DIM];
         multiplicar(A, B, nfa, nca, ncb, C);
