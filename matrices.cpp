@@ -136,7 +136,6 @@ void multiplicar(const int A[][DIM], const int B[][DIM],
  */
 
 int main() {
-
     // Paso 1: pedir al usuario una matriz M de dimensión n x m y escribir la matriz traspuesta
     cout << "TRASPUESTA DE UNA MATRIZ:" << endl;
     cout << endl;
@@ -149,9 +148,14 @@ int main() {
     escribirTraspuesta(M,n,m);
     
     // Paso 2: verificar si la matriz es cuadrada y es simétrica y escribir el mensaje correspondiente
-    
-    if (n == m && esSimetrica(M, n)) {
-        cout << "La matriz es simétrica" << endl;
+    if (n == m) {
+        cout << "La matriz ";
+        if (esSimetrica(M, n)) {
+        }
+        else {
+            cout << "no ";
+        }
+        cout << "es simétrica" << endl;
     }
 
     // Paso 3: pedir al usuario dos matrices A (dimensión: nfa x nca) y B (dimensión: nfb x ncb)
