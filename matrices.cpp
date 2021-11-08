@@ -13,13 +13,13 @@ using namespace std;
 /*
  * Dimensión máxima de las matrices con las que se va a trabajar.
  */
-const unsigned int DIM = 10;
+const unsigned DIM = 10;
 
 /*
  * Anchura mínima de cada componente de una matriz cuando se escribe en la
  * pantalla.
  */
-const unsigned int ANCHO = 4;
+const unsigned ANCHO = 4;
 
 
 /*
@@ -30,15 +30,15 @@ const unsigned int ANCHO = 4;
  *       nf x nc datos enteros y se han copiado en las primeras nf x nc
  *       componentes de «mat», de menor a mayor índice.
  */
-void leerMatriz(int mat[][DIM], unsigned int& nf, unsigned int& nc) {
+void leerMatriz(int mat[][DIM], unsigned& nf, unsigned& nc) {
     do {
         cout << "Introduzca el número de filas y columnas (>0): ";
         cin >> nf >> nc;
     } while (nf <= 0 || nc <= 0 || nf > DIM || nc > DIM);
     
-    for (unsigned int i = 0; i < nf; i++){
+    for (unsigned i = 0; i < nf; i++){
         cout << "Fila " << i + 1 << ": Introduzca " << nc << " enteros: ";
-        for(unsigned int j = 0;  j < nc; j++){
+        for(unsigned j = 0;  j < nc; j++){
             cin >> mat[i][j];
         }
     }
@@ -52,9 +52,9 @@ void leerMatriz(int mat[][DIM], unsigned int& nf, unsigned int& nc) {
  *       matriz «mat» desde la de menor índice a la de mayor.
  */
 void escribirMatriz(const int mat[][DIM],
-                    const unsigned int nf, const unsigned int nc) {
-    for (unsigned int i = 0; i < nf; i++){
-        for (unsigned int j = 0; j < nc; j++){
+                    const unsigned nf, const unsigned nc) {
+    for (unsigned i = 0; i < nf; i++){
+        for (unsigned j = 0; j < nc; j++){
             cout << setw(ANCHO) << mat[i][j];
         }
         cout << endl;
@@ -68,9 +68,9 @@ void escribirMatriz(const int mat[][DIM],
  * Post: Ha escrito la transpuesta de la matriz «mat» en la pantalla.
  */
 void escribirTraspuesta(const int mat[][DIM],
-                        const unsigned int nf, const unsigned int nc){
-    for (unsigned int j = 0; j < nc; j++){
-        for(unsigned int i = 0; i < nf; i++){
+                        const unsigned nf, const unsigned nc){
+    for (unsigned j = 0; j < nc; j++){
+        for(unsigned i = 0; i < nf; i++){
             cout << setw(ANCHO) << mat[i][j];
         }
         cout << endl;
@@ -83,11 +83,11 @@ void escribirTraspuesta(const int mat[][DIM],
  *       0 < n ≤ DIM.
  * Post: Ha devuelto el valor «true» si y solo si «mat» es simétrica.
  */
-bool esSimetrica(const int mat[][DIM], const unsigned int n){
+bool esSimetrica(const int mat[][DIM], const unsigned n){
     bool deMomentoEsSimetrica = true;
-    unsigned int i = 0;
+    unsigned i = 0;
     while (deMomentoEsSimetrica && i < n) {
-        unsigned int j = i + 1;
+        unsigned j = i + 1;
         while( deMomentoEsSimetrica && j < n) {
             if( mat[i][j] != mat[j][i]) {
                 deMomentoEsSimetrica = false;            
@@ -108,12 +108,12 @@ bool esSimetrica(const int mat[][DIM], const unsigned int n){
  * Post: La matriz «C» es la matriz producto de la multiplicación A × B.
  */
 void multiplicar(const int A[][DIM], const int B[][DIM],
-         const unsigned int nfa, const unsigned int nca, const unsigned int ncb,
+         const unsigned nfa, const unsigned nca, const unsigned ncb,
          int C[][DIM]) {
-    for (unsigned int i = 0; i < nfa; i++) {
-        for (unsigned int k = 0; k < ncb; k++) {
+    for (unsigned i = 0; i < nfa; i++) {
+        for (unsigned k = 0; k < ncb; k++) {
             int suma=0;
-            for (unsigned int j = 0; j < nca; j++){
+            for (unsigned j = 0; j < nca; j++){
                 suma += A[i][j] * B[j][k];
             }
             C[i][k] = suma;
@@ -141,7 +141,7 @@ int main() {
     cout << endl;
     
     int M[DIM][DIM];
-    unsigned int n, m;
+    unsigned n, m;
     leerMatriz(M,n,m);
 
     cout << "La matriz traspuesta es:" << endl;
@@ -165,12 +165,12 @@ int main() {
     cout << endl;
     
     int A[DIM][DIM];
-    unsigned int nfa, nca;
+    unsigned nfa, nca;
     leerMatriz(A, nfa, nca);
     cout << endl;
 
     int B[DIM][DIM];
-    unsigned int nfb, ncb;
+    unsigned nfb, ncb;
     leerMatriz(B, nfb, ncb);
     cout << endl;
 
