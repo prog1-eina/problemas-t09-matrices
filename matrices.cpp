@@ -97,8 +97,8 @@ bool esSimetrica(const int mat[][DIM], const unsigned n){
     unsigned i = 0;
     while (deMomentoEsSimetrica && i < n) {
         unsigned j = i + 1;
-        while( deMomentoEsSimetrica && j < n) {
-            if( mat[i][j] != mat[j][i]) {
+        while (deMomentoEsSimetrica && j < n) {
+            if (mat[i][j] != mat[j][i]) {
                 deMomentoEsSimetrica = false;            
             }
             j++;
