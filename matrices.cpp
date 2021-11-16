@@ -5,7 +5,7 @@
  * Resumen: Soluciones a los problemas planteados en la clase de problemas
  *          del tema 9 sobre matrices.
  * Nota: El programa completo está contenido en este fichero, por lo que puede 
- *       compilarse y ejecutarse con la extensión Run Code de Visual Studio
+ *       compilarse y ejecutarse con la extensión Code Runner de Visual Studio
  *       Code.
  *       También puede compilarse desde la terminal través de la orden
  *           g++ -Wall -Wextra matrices.cpp -o matrices

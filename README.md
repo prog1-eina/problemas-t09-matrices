@@ -6,7 +6,7 @@ Se recomienda **no consultar** estas soluciones hasta **después** de haber inte
 
 ## Compilación y ejecución
 
-Cada fichero de este repositorio contiene un programa completo, por lo que puede compilarse y ejecutarse con la extensión Run Code de Visual Studio Code.
+Cada fichero de este repositorio contiene un programa completo, por lo que puede compilarse y ejecutarse con la extensión Code Runner de Visual Studio Code.
 
 También puede compilarse desde la terminal través de la orden
 
