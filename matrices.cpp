@@ -33,11 +33,11 @@ const unsigned ANCHO = 4;
 
 /*
  * Pre:  La matriz «mat» tiene unas dimensiones máximas de DIM × DIM.
- * Post: Se ha solicitado al usuario y el número de filas «nf» y de columnas 
- *       «nf» y se ha leído del teclado hasta que 0 < nf ≤ DIM y 0 < nc ≤ DIM.
- *       A continuación, se ha solicitado la introducción por el teclado de
- *       nf × nc datos enteros y se han copiado en las primeras nf × nc
- *       componentes de «mat», de menor a mayor índice.
+ * Post: Solicita al usuario el número de filas «nf» y de columnas «nf» los lee
+ *       del teclado hasta que 0 < nf ≤ DIM y 0 < nc ≤ DIM. A continuación,
+ *       solicita la introducción por el teclado de nf × nc datos enteros y los
+ *       copia en las primeras nf × nc componentes de «mat», de menor a mayor
+ *       índice.
  */
 void leerMatriz(int mat[][DIM], unsigned& nf, unsigned& nc) {
     do {
@@ -57,7 +57,7 @@ void leerMatriz(int mat[][DIM], unsigned& nf, unsigned& nc) {
 /*
  * Pre:  La matriz «mat» de dimensiones máximas DIM × DIM tiene las primeras 
  *       «nf» × «nc» componentes inicializadas, con 0 < nf ≤ DIM y 0 < nc ≤ DIM.
- * Post: Ha escrito los valores de las «nf» × «nc» primeras componentes de la
+ * Post: Escribe los valores de las «nf» × «nc» primeras componentes de la
  *       matriz «mat» desde la de menor índice a la de mayor.
  */
 void escribirMatriz(const int mat[][DIM],
@@ -74,7 +74,7 @@ void escribirMatriz(const int mat[][DIM],
 /* 
  * Pre:  La matriz «mat» es una matriz de dimensiones máximas DIM × DIM
  *       y «nf» y «nc» están comprendidos entre 1 y DIM (inclusive).
- * Post: Ha escrito la transpuesta de la matriz «mat» en la pantalla.
+ * Post: Escribe la transpuesta de la matriz «mat» en la pantalla.
  */
 void escribirTraspuesta(const int mat[][DIM],
                         const unsigned nf, const unsigned nc){
@@ -90,7 +90,7 @@ void escribirTraspuesta(const int mat[][DIM],
 /*
  * Pre:  La matriz «mat» es una matriz de dimensiones máximas DIM × DIM y
  *       0 < n ≤ DIM.
- * Post: Ha devuelto el valor «true» si y solo si «mat» es simétrica.
+ * Post: Devuelve el valor «true» si y solo si «mat» es simétrica.
  */
 bool esSimetrica(const int mat[][DIM], const unsigned n){
     bool deMomentoEsSimetrica = true;
@@ -143,7 +143,6 @@ void multiplicar(const int A[][DIM], const int B[][DIM],
  * en caso afirmativo, calcula la matriz producto y la escribe en la pantalla.
  * En caso negativo avisa al usuario con un mensaje.
  */
-
 int main() {
     // Paso 1: pedir al usuario una matriz M de dimensión n × m
     //         y escribir su matriz traspuesta
