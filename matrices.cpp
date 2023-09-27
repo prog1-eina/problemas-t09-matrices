@@ -205,8 +205,7 @@ int main() {
     if (n == m) {
         cout << "La matriz ";
         if (esSimetrica(M, n)) {
-        }
-        else {
+        } else {
             cout << "no ";
         }
         cout << "es simétrica" << endl;
