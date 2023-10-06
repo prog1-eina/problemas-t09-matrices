@@ -236,8 +236,7 @@ int main() {
         multiplicar(A, B, nfa, nca, ncb, C);
         cout << "El producto es:" << endl;
         escribirMatriz(C, nfa, ncb);
-    }
-    else{
+    } else{
         cout << "No se puede calcular el producto A × B:" << endl;
         cout << "el nº de columnas de A no es igual al nº de filas de B."
              << endl;
