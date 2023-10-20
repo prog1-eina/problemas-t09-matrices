@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Curso de Programación 1. Tema 9
  * Autores: Simona Bernardi y Miguel Ángel Latre
- * Última revisión: 9 de noviembre de 2022
+ * Última revisión: 20 de octubre de 2023
  * Resumen: Soluciones a los problemas planteados en la clase de problemas
  *          del tema 9 sobre matrices.
  * Nota: El programa completo está contenido en este fichero, por lo que puede 
@@ -135,12 +135,11 @@ bool esSimetrica(const int mat[][DIM], const unsigned n) {
         i++;
     } 
     // Se sale de los bucles por una de estas dos causas:
-    //  - Se ha encontrado par de componentes (i, j) tales que mat[i][j] ≠ m[j][i].
-    //    En este caso, la matriz no es simétrica y «deMomentoEsSimetrica» tiene
-    //    que valer «false».
-    //  - Se han recorrido todas las filas y columnas y no sin encontrar ningún
-    //    par de componentes (i, j) tales que mat[i][j] ≠ m[j][i]. En este caso, 
-    //    la matriz es simétrica y «deMomentoEsSimetrica» tiene que valer «true».
+    //  - Se han encontrado par de componentes (i, j) tales que mat[i][j] ≠ m[j][i].
+    //    En este caso, la matriz no es simétrica y «deMomentoEsSimetrica» es «false».
+    //  - Se han recorrido todas las filas y columnas sin encontrar ningún par de
+    //    componentes (i, j) tales que mat[i][j] ≠ m[j][i]. En este caso, la matriz
+    //    es simétrica y «deMomentoEsSimetrica» tiene que valer «true».
     return deMomentoEsSimetrica;
 }
 
