@@ -39,7 +39,7 @@ const unsigned ANCHO = 4;
  *       copia en las primeras nf × nc componentes de «mat», de menor a mayor
  *       índice.
  */
-void leerMatriz(int mat[][DIM], unsigned& nf, unsigned& nc) {
+void leerMatriz(int mat[][DIM], unsigned &nf, unsigned &nc) {
     // Petición de las dimensiones hasta que 0 < nf ≤ DIM y 0 < nc ≤ DIM
     do {
         cout << "Introduzca el número de filas y columnas (>0): ";
