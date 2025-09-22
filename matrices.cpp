@@ -1,4 +1,4 @@
-/******************************************************************************\
+/******************************************************************************
  * Curso de Programación 1. Tema 9
  * Autores: Simona Bernardi y Miguel Ángel Latre
  * Última revisión: 20 de octubre de 2023
@@ -13,7 +13,7 @@
  *           .\matrices.exe
  *       o en Linux y macOS
  *           ./matrices
-\******************************************************************************/
+ *****************************************************************************/
 #include <iostream>
 #include <iomanip>
 
@@ -52,8 +52,8 @@ void leerMatriz(int mat[][DIM], unsigned &nf, unsigned &nc) {
         // se piden los datos de esa fila:
         cout << "Fila " << i + 1 << ": Introduzca " << nc << " enteros: ";
         for(unsigned j = 0;  j < nc; j++){
-            // Y se leen los datos de cada columna «j», con «j» entre 0 y «nc» - 1,
-            // de la fila «i».
+            // Y se leen los datos de cada columna «j», con «j» entre 0 y
+            // «nc» - 1, de la fila «i».
             cin >> mat[i][j];
         }
     }
@@ -62,7 +62,8 @@ void leerMatriz(int mat[][DIM], unsigned &nf, unsigned &nc) {
 
 /*
  * Pre:  La matriz «mat» de dimensiones máximas DIM × DIM tiene las primeras 
- *       «nf» × «nc» componentes inicializadas, con 0 < nf ≤ DIM y 0 < nc ≤ DIM.
+ *       «nf» × «nc» componentes inicializadas, con 0 < nf ≤ DIM
+ *       y 0 < nc ≤ DIM.
  * Post: Escribe los valores de las «nf» × «nc» primeras componentes de la
  *       matriz «mat» desde la de menor índice a la de mayor.
  */
@@ -75,7 +76,8 @@ void escribirMatriz(const int mat[][DIM],
             // «nc» - 1, de la fila «i» ...
             cout << setw(ANCHO) << mat[i][j];
         }
-        // ... y, tras escribir todos los datos de la fila «i», terminamos la línea.
+        // ... y, tras escribir todos los datos de la fila «i»,
+        // terminamos la línea.
         cout << endl;
     }
 }
@@ -88,9 +90,10 @@ void escribirMatriz(const int mat[][DIM],
  */
 void escribirTraspuesta(const int mat[][DIM],
                         const unsigned nf, const unsigned nc) {
-    // En lugar de recorrer la matriz por filas y, dentro de cada fila, por columnas,
-    // lo hacemos al revés: primero por columnas y luego por filas. De este modo, lo
-    // que se escribe en la pantalla es la traspuesta dela matriz «mat».
+    // En lugar de recorrer la matriz por filas y, dentro de cada fila, por
+    // columnas, lo hacemos al revés: primero por columnas y luego por filas.
+    // De este modo, lo que se escribe en la pantalla es la traspuesta de la
+    // matriz «mat».
     for (unsigned j = 0; j < nc; j++){
         for(unsigned i = 0; i < nf; i++){
             cout << setw(ANCHO) << mat[i][j];
@@ -106,9 +109,9 @@ void escribirTraspuesta(const int mat[][DIM],
  * Post: Devuelve el valor «true» si y solo si «mat» es simétrica.
  */
 bool esSimetrica(const int mat[][DIM], const unsigned n) {
-    // Planteamiento como un problema de búsqueda de un par de componentes (i, j)
-    // tales que mat[i][j] ≠ m[j][i]. Si se encuentra alguno, NO es simétrica.
-    // Si no se encuentra ninguno, es simétrica.
+    // Planteamiento como un problema de búsqueda de un par de componentes
+    // (i, j) tales que mat[i][j] ≠ m[j][i]. Si se encuentra alguno, NO es
+    // simétrica. Si no se encuentra ninguno, es simétrica.
 
     // La variable «deMomentoEsSimetrica» va a valer «true» mientras no se haya
     // encontrado un par de componentes (i, j) tales que mat[i][j] ≠ m[j][i].
@@ -135,11 +138,12 @@ bool esSimetrica(const int mat[][DIM], const unsigned n) {
         i++;
     } 
     // Se sale de los bucles por una de estas dos causas:
-    //  - Se han encontrado par de componentes (i, j) tales que mat[i][j] ≠ m[j][i].
-    //    En este caso, la matriz no es simétrica y «deMomentoEsSimetrica» es «false».
-    //  - Se han recorrido todas las filas y columnas sin encontrar ningún par de
-    //    componentes (i, j) tales que mat[i][j] ≠ m[j][i]. En este caso, la matriz
-    //    es simétrica y «deMomentoEsSimetrica» tiene que valer «true».
+    //  - Se han encontrado par de componentes (i, j) tales que
+    //    mat[i][j] ≠ m[j][i]. En este caso, la matriz no es simétrica y
+    //    «deMomentoEsSimetrica» es «false».
+    //  - Se han recorrido todas las filas y columnas sin encontrar ningún par
+    //    de componentes (i, j) tales que mat[i][j] ≠ m[j][i]. En este caso, la
+    //    matriz es simétrica y «deMomentoEsSimetrica» tiene que valer «true».
     return deMomentoEsSimetrica;
 }
 
@@ -150,20 +154,24 @@ bool esSimetrica(const int mat[][DIM], const unsigned n) {
  *       «nfa» representa el número de filas de «A»;
  *       «nca», el número de columnas de «A» y el número de filas de «B»;
  *       «ncb», el número de columnas de «B»;
- *	     Como «nca» representa el número de columnas de «A» y el número de filas de
- *       «B», se cumplen las condiciones para la multiplicación de las dos matrices
- *       «A» y «B»: el número de columnas de «A» es igual al número de filas de «B».
+ *	     Como «nca» representa el número de columnas de «A» y el número de
+ *       filas de «B», se cumplen las condiciones para la multiplicación de las
+ *       dos matrices «A» y «B»: el número de columnas de «A» es igual al
+ *       número de filas de «B».
  * Post: La matriz «C» es la matriz producto de la multiplicación A × B.
  */
 void multiplicar(const int A[][DIM], const int B[][DIM],
          const unsigned nfa, const unsigned nca, const unsigned ncb,
          int C[][DIM]) {            
-    // Para cada una de las filas «i», con «i» entre 0 y «nfa» - 1, de la matriz «C» ...
+    // Para cada una de las filas «i», con «i» entre 0 y «nfa» - 1,
+    // de la matriz «C» ...
     for (unsigned i = 0; i < nfa; i++) {
-        // Para cada una de las filas «k», con «k» entre 0 y «ncb» - 1, de la matriz «C» ...
+        // Para cada una de las filas «k», con «k» entre 0 y «ncb» - 1,
+        // de la matriz «C» ...
         for (unsigned k = 0; k < ncb; k++) {
-            // Se calcula el valor de la componente C[i][k] de la matriz producto
-            // aplicando la definición del producto de matrices: cᵢₖ = ∑ aᵢⱼ·bⱼₖ
+            // Se calcula el valor de la componente C[i][k] de la matriz
+            // producto aplicando la definición del producto de matrices:
+            // cᵢₖ = ∑ aᵢⱼ·bⱼₖ
             int suma=0;
             for (unsigned j = 0; j < nca; j++){
                 suma += A[i][j] * B[j][k];
@@ -177,14 +185,14 @@ void multiplicar(const int A[][DIM], const int B[][DIM],
 /*
  * Programa que solicita al usuario que introduzca los datos de una matriz «M»
  * (tanto las dimensiones entre 1 y DIM como valores de todas sus componentes) 
- * y escribe en la pantalla la matriz traspuesta de «M». Si «M» es cuadrada y es
- * simétrica, escribe un mensaje en la pantalla indicándolo.
+ * y escribe en la pantalla la matriz traspuesta de «M». Si «M» es cuadrada y
+ * es simétrica, escribe un mensaje en la pantalla indicándolo.
  * 
- * A continuación, solicita al usuario que introduzca los datos dos matrices «a»
- * y «b» (también tanto las dimensiones entre 1 y DIM como los valores de sus 
- * componentes). Comprueba si se puede calcular el producto de las dos matrices:
- * en caso afirmativo, calcula la matriz producto y la escribe en la pantalla.
- * En caso negativo avisa al usuario con un mensaje.
+ * A continuación, solicita al usuario que introduzca los datos dos matrices
+ * «a» y «b» (también tanto las dimensiones entre 1 y DIM como los valores de
+ * sus componentes). Comprueba si se puede calcular el producto de las dos
+ * matrices: en caso afirmativo, calcula la matriz producto y la escribe en la
+ * pantalla. En caso negativo avisa al usuario con un mensaje.
  */
 int main() {
     // Paso 1: pedir al usuario una matriz M de dimensión n × m
@@ -221,7 +229,6 @@ int main() {
     unsigned nfa, nca;
     leerMatriz(A, nfa, nca);
     cout << endl;
-
     int B[DIM][DIM];
     unsigned nfb, ncb;
     leerMatriz(B, nfb, ncb);
