@@ -166,17 +166,17 @@ void multiplicar(const int A[][DIM], const int B[][DIM],
     // Para cada una de las filas «i», con «i» entre 0 y «nfa» - 1,
     // de la matriz «C» ...
     for (unsigned i = 0; i < nfa; i++) {
-        // Para cada una de las filas «k», con «k» entre 0 y «ncb» - 1,
+        // Para cada una de las filas «j», con «j» entre 0 y «ncb» - 1,
         // de la matriz «C» ...
-        for (unsigned k = 0; k < ncb; k++) {
-            // Se calcula el valor de la componente C[i][k] de la matriz
+        for (unsigned j = 0; j < ncb; j++) {
+            // Se calcula el valor de la componente C[i][j] de la matriz
             // producto aplicando la definición del producto de matrices:
-            // cᵢₖ = ∑ aᵢⱼ·bⱼₖ
+            // cᵢⱼ = ∑ aᵢₖ·bₖⱼ
             int suma=0;
-            for (unsigned j = 0; j < nca; j++){
-                suma += A[i][j] * B[j][k];
+            for (unsigned k = 0; k < nca; k++){
+                suma += A[i][k] * B[k][j];
             }
-            C[i][k] = suma;
+            C[i][j] = suma;
         }
     }
 }
