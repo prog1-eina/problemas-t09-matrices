@@ -1,7 +1,6 @@
 /******************************************************************************
  * Curso de Programación 1. Tema 9
  * Autores: Simona Bernardi y Miguel Ángel Latre
- * Última revisión: 20 de octubre de 2023
  * Resumen: Soluciones a los problemas planteados en la clase de problemas
  *          del tema 9 sobre matrices.
  * Nota: El programa completo está contenido en este fichero, por lo que puede 
